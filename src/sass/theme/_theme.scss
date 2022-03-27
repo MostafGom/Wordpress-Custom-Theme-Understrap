@@ -1,0 +1,386 @@
+// This is an empty scss file for your custom styles - Please add your super duper awesome mega design styles here
+$primary: #223A47;
+$primary-light: #5DA0AA;
+$secondary:#F27257;
+
+
+
+$xs: 0;
+$sm: 576px;
+$md: 768px;
+$lg: 992px;
+$xl: 1448px;
+
+
+body{
+    // font-family: 'Fredericka the Great', cursive;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    line-height: 1.25;
+}
+
+.mobile-logo-holder{
+    text-align: center;
+    display: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    @media(max-width:$md){
+        display: block;
+    }
+    img{
+        width: 35%;
+        @media(max-width:$sm){
+            width: 55%;
+        }
+    }
+}
+
+.reservation-btn{
+    font-family: 'Fredericka the Great', cursive;
+    font-size: 38px;
+    border: 1px dotted $secondary;
+    display: inline-block;
+    padding: 0.25em 0.5em;
+    border-radius: 0.25em;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all 0.25s ease;
+    &:hover{
+        background-color: $secondary;
+        color: #fff;
+    }
+    @media(max-width:$lg){
+        font-size: 18px;
+    }
+    @media(max-width:$md){
+        display: none;
+        &.mobile{
+            display: block;
+            margin-top: 10px;
+        }
+    }
+}
+#wrapper-navbar{
+
+    .top-header-holder{
+        height: auto;
+        background-color: #f1f1f1;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        @media(max-width:$lg){
+            padding-top: 25px;
+            padding-bottom: 25px;
+        }
+        @media(max-width:$md){
+            padding-top: 15px;
+            padding-bottom: 15px;
+        }
+        .navbar-toggler{
+            display: none;
+            @media(max-width:$lg){
+                display: block;
+            }
+            padding:1em;
+            padding-bottom: 0;
+            &:hover{
+                background: rgba($color: #5dA0AA, $alpha: 0.25);
+            }
+            .bar{
+                height: 4px;
+                border-radius: 4px;
+                background: rgba($color: #5dA0AA, $alpha: 0.5);
+                margin-bottom: 4px;
+                width: 2.5em;
+            }
+            .menu-title{
+                font-size: 14px;
+                margin-top: 2.5em;
+                text-transform: uppercase;
+                font-weight: 600;
+            }
+            &.md-view{
+                display: none;
+            }
+            @media(max-width:$md){
+                display: none;
+                &.md-view{
+                    display: flex;
+                    padding: 0.5em;
+                    align-items: center;
+                    margin: -0.5em;
+                    .menu-title{
+                        margin-top: 0px;
+                        margin-right: 0.5em;
+                        font-size: 18px;
+                    }
+                }
+                .bar{
+                    height: 3px;
+                    border-radius: 3px;
+                    background: rgba($color: #5dA0AA, $alpha: 0.5);
+                    margin-bottom: 3px;
+                    width: 1em;
+                }
+            }
+        }
+        .container{
+            .logo-holder{
+                display: block;
+                .logo{
+                    width: 180px;
+                    @media(max-width:$lg){
+                        width: 150px;
+                    }
+                }
+                @media(max-width:$md){
+                    display: none;
+                }
+            }
+            .col-6{
+                @media(max-width:$lg){
+                    text-align: center;
+                }
+            }
+            .contact-holder{
+                font-size: 18px;
+                font-weight: 600;
+                @media(max-width:$md){
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                }
+                a{
+                    display: inline-block;
+                    margin-right: 1em;
+                    margin-bottom: 1em;
+                    @media(max-width:$lg){
+                        margin-right: 0.5em;
+                        margin-bottom: 0.5em;
+
+                    }
+                    @media(max-width:$md){
+                        margin-right: 0em;
+                        margin-bottom: 0em;
+
+                    }
+                    color: $primary;
+                    .fa{
+                        color: $secondary;
+                    }
+                }
+                @media(max-width:$lg){
+                    font-size: 16px;
+                    .address{
+                        display: none;
+                    }
+                }
+                @media(max-width:$md){
+                    font-size: 18px;
+                }
+            }
+            
+            .social-media-holder,.social-media-holder-tablet{
+                font-size: 50px;
+                a{
+                    text-decoration: none;
+                    color: $secondary;
+                    &:hover{
+                        color: darken($color: $secondary, $amount: 15%);
+                    }
+                }
+                @media(max-width:$lg){
+                    display: none;
+                }
+                &.social-media-holder-tablet{
+                    display: none;
+                    @media(max-width:$lg){
+                        display: inline-block;
+                        font-size: 18px;
+                    }
+                    @media(max-width:$md){
+                        display: none;
+                    }
+                }
+            }
+        }
+    }
+    
+    #main-nav{
+        border-top: 1px solid rgba($color: #5DA0AA, $alpha: 0.5);
+        border-bottom: 1px solid rgba($color: #5DA0AA, $alpha: 0.5);
+        padding: 0px;
+        ul{
+            flex: 1;
+            justify-content: space-between;
+            li{
+                a{
+                    font-weight: 600;
+                    font-size: 22px;
+                    text-transform: uppercase;
+                    padding: 1.5em 0.5em;
+                    @media (max-width:$xl) {
+                        padding: 1em 0.33em;
+                    }
+                }
+                &.current_page_item{
+                    a{
+                        color: $secondary;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.home-banner{
+    height: 100vh;
+    background-color: #ccc;
+    background-image: url('../imgs/img1.jpg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    position: relative;
+    padding-bottom: 150px;
+    @media(max-width:$lg){
+        height: 50vh;
+        padding-bottom: 70px;
+    }
+    &::after{
+        content: "";
+        height: 200px;
+        background:linear-gradient(to bottom,rgba(white,0),rgba(white,1));
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        @media(max-width:$lg){
+            height: 100px;
+        }
+    }
+    h1{
+        font-size: 100px;
+        font-family: 'Fredericka the Great', cursive;
+        color: sandybrown;
+        z-index: 1000;
+        @media(max-width:$lg){
+            font-size: 72px;
+        }
+        @media(max-width:$md){
+            font-size: 48px;
+        }
+        @media(max-width:$sm){
+            font-size: 36px;
+        }
+       
+    }
+}
+
+.home-call-to-action{
+    @media(max-width:$md){
+        text-align: center;
+    }
+
+    .call-to-action{
+        border-radius: 50%;
+        padding-bottom: 100%;
+        width: 100%;
+        cursor: pointer;
+        position: relative;
+        display: block;
+        transition: all 0.2s ease-in-out;
+        
+        @media(max-width:$md){
+            padding-bottom: 50%;
+            width: 50%;
+            margin-bottom: 20px;
+            display: inline-block;
+
+        }
+        @media(max-width:$sm){
+            padding-bottom: 90%;
+            width: 90%;
+            margin-bottom: 20px;
+        }
+        &.first{
+            .image{
+                background-image: url('../imgs/call-to-action1.jpg');
+                border-color: $secondary;
+            }
+            .title{
+                background-color: $primary;
+            }
+        }
+        &.second{
+            .image{
+                background-image: url('../imgs/call-to-action2.jpg');
+                border-color: $primary;
+            }
+            .title{
+                background-color: $secondary;
+            }
+        }
+
+        &.third{
+            .image{
+                background-image: url('../imgs/call-to-action3.jpg');
+                border-color: $secondary;
+            }
+            .title{
+                background-color: $primary;
+            }
+        }
+        .image{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-radius: 50%;
+            border-style: solid;
+            border-width: 25px;
+            @media(max-width:$md){
+                border-width: 15px;
+            }
+            @media(max-width:$lg){
+                border-width: 15px;
+            
+            }
+        }
+        .title{
+            font-size: 25px;
+            position: absolute;
+            left: 40%;
+            bottom: 50px;
+            padding: 0.5em;
+            // background-color: $primary-light;
+            border-radius: 0.25em;
+            color: white;
+            border: 1px dotted white;
+            text-align: center;
+            transition: all 0.2s ease-in-out;
+            @media(max-width:$lg){
+                font-size: 20px;
+            }
+            @media(max-width:$md){
+                left: 0%;
+                bottom: 0%;
+                width: 100%;
+
+            }
+
+        }
+
+        &:hover{
+            transform:scale(1.05);
+            .title{
+                left: 0%;
+                bottom: 0px;
+            }
+        }
+    }
+    
+}
